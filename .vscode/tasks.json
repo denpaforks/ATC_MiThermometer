@@ -1,58 +1,71 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Re-Build",
-			"group": "build",
-			"type": "shell",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Clean",
-				"Build"
-			]
-		},
-		{
-			"label": "Build",
-			"type": "shell",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": true,
-				"close": false,
-				"panel": "dedicated",
-				"clear": true,
-				"revealProblems": "onProblem",
-			},
-			"command": "make",
-			"problemMatcher": {
-				//Note: If you get a "the description can't be converted into a problem matcher" error here
-				// The "C/C++" extension has not been installed (yet)
-				"source": "GCC-Build",
-				"base": "$gcc",
-				"fileLocation": [
-					"autodetect",
-					"${workspaceFolder}/build"
-				]
-			}
-		},
-		{
-			"label": "Clean",
-			"type": "shell",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": true,
-				"close": false,
-				"panel": "dedicated",
-				"clear": true,
-				"revealProblems": "never",
-			},
-			"linux": {
-				"command": "make clean",
-			},
-			"problemMatcher": []
-		}
-	]
-}
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Re-Build",
+            "group": "build",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Clean",
+                "Build"
+            ]
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "close": false,
+                "panel": "dedicated",
+                "clear": true,
+                "revealProblems": "onProblem"
+            },
+            "command": "cmake --build \"${workspaceFolder}/cmake_builds/ATC_Thermometer/TC32-GCC_Toolchain\"",
+            "problemMatcher": {
+                "source": "GCC-Build",
+                "base": "$gcc",
+                "fileLocation": [
+                    "autoDetect",
+                    "${workspaceFolder}"
+                ]
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "close": false,
+                "panel": "dedicated",
+                "clear": true,
+                "revealProblems": "never"
+            },
+            "command": "cmake --build \"${workspaceFolder}/cmake_builds/ATC_Thermometer/TC32-GCC_Toolchain\" --target clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            },
+            "command": "${env:USERPROFILE}/.Telink_Tools/cmake-4.0.2-windows-x86_64/bin/cmake.exe -S \"${workspaceFolder}\" -B \"${workspaceFolder}/cmake_builds/ATC_Thermometer/TC32-GCC_Toolchain\" -DCMAKE_TOOLCHAIN_FILE=\"${workspaceFolder}/cmake/tc32-toolchain.cmake\" -DCMAKE_MAKE_PROGRAM=\"${env:USERPROFILE}/.Telink_Tools/ninja_tlk/ninja.exe\" -G \"Ninja\"",
+            "problemMatcher": []
+        }
+    ]
+}

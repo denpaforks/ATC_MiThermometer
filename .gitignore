@@ -1,8 +1,31 @@
 __pycache__/
 *.py[cod]
 .idea/
-# generated output
+
+# ── Legacy Make build output ───────────────────────────────────────────────
 out/*
+
+# ── CMake build directories ────────────────────────────────────────────────
+cmake_builds/
+# (keep cmake_configs/ tracked — extension uses it for project metadata)
+
+# ── Generated firmware images ──────────────────────────────────────────────
+*.bin
+*.elf
+zigbee_ota/
+bin/
+
+# ── CMake / IDE generated files ────────────────────────────────────────────
+compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+build.ninja
+.ninja_deps
+.ninja_log
+
+# ── Python interface build ─────────────────────────────────────────────────
 python-interface/atc_mi_interface.egg-info/*
 python-interface/build/*
 python-interface/dist/*

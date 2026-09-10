@@ -1,0 +1,2261 @@
+{
+    "name": "ATC_Thermometer",
+    "toolchain_path": "",
+    "toolchainName": "TC32-GCC Toolchain",
+    "toolchainVersionName": "TC32-GCC Toolchain",
+    "language": "c",
+    "targets": [
+        {
+            "name": "ATC",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_LYWSD03MMC"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "BTH",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MJWSD05MMC"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "BTE",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MJWSD05MMC_EN"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "MJ6",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MJWSD06MMC"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "CGDK2",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_CGDK2"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "CGG1",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_CGG1",
+                "-DDEVICE_CGG1_ver=0"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "CGG1M",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_CGG1",
+                "-DDEVICE_CGG1_ver=2022"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "MHO_C401",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MHO_C401"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "MHO_C401N",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MHO_C401N"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "MHO_C122",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_MHO_C122"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TNK01",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TNK01"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201S1",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201",
+                "-DUSE_SENSOR_MY18B20=1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201S2",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201",
+                "-DUSE_SENSOR_MY18B20=2"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201E280",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201",
+                "-DUSE_SENSOR_BME280=1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201B280",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201",
+                "-DUSE_SENSOR_BMP280=1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TH03Z",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TH03Z"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZTH01",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH01"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZTH01S1",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH01",
+                "-DUSE_SENSOR_MY18B20=1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZTH01S2",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH01",
+                "-DUSE_SENSOR_MY18B20=2"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZTH02",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH02"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "PLM1",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_PLM1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TB03F",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TB03F"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TH03",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH03"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "LKTMZL02",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_LKTMZL02"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZTH05",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZTH05Z"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZYZTH02",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZYZTH02"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZYZTH02S1",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZYZTH02",
+                "-DUSE_SENSOR_MY18B20=1"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZYZTH02S2",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZYZTH02",
+                "-DUSE_SENSOR_MY18B20=2"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZYZTH02P",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZYZTH01"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZG227Z",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZG_227Z"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZG303Z",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZG303Z"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZBTH01",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZBEACON_TH01"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZB_MC",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZB_MC"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZB2TH01",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZBEACON2TH01"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "LYWSD02MMC",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_LYWSD02MMC"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "ZG204ZV",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_ZG204ZV"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        },
+        {
+            "name": "TS0201W",
+            "path": "./",
+            "toolchain": "TC32-GCC Toolchain",
+            "toolchainVersionName": "TC32-GCC Toolchain",
+            "directories": [
+                "src",
+                "SDK"
+            ],
+            "global_options": [],
+            "asm_compile_options": [
+                "-DMCU_STARTUP_825X"
+            ],
+            "c_compile_options": [
+                "-ffunction-sections",
+                "-fdata-sections",
+                "-Wall",
+                "-O2",
+                "-fpack-struct",
+                "-fshort-enums",
+                "-finline-small-functions",
+                "-std=gnu99",
+                "-funsigned-char",
+                "-fshort-wchar",
+                "-fms-extensions",
+                "-DCHIP_TYPE=CHIP_TYPE_8258",
+                "-DDEVICE_TYPE=DEVICE_TS0201_WING"
+            ],
+            "cpp_compile_options": [],
+            "cpp_linker_script": "",
+            "cpp_linker_options": [],
+            "cpp_linker_directories": [],
+            "cpp_linker_libraries": [],
+            "linker_script": "src/boot.link",
+            "linker_options": [
+                "--gc-sections"
+            ],
+            "linker_directories": [
+                "SDK/components/proj_lib"
+            ],
+            "linker_libraries": [
+                "lt_8258"
+            ],
+            "pre_build": [],
+            "post_build": [],
+            "print_size": [
+                "-t"
+            ],
+            "obj_copy": [
+                "-O binary"
+            ],
+            "obj_dump": [
+                "-x",
+                "-D",
+                "-l",
+                "-S"
+            ],
+            "sub_directories": []
+        }
+    ]
+}
