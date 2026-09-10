@@ -337,11 +337,7 @@ void cmd_parser(void * p) {
 					lcd_flg.chow_ext_ut = 0xffffffff;
 				else
 					lcd_flg.chow_ext_ut = wrk.utc_time_sec + ext.vtime_sec;
-#if (DEVICE_TYPE == DEVICE_MJWSD05MMC) || (DEVICE_TYPE == DEVICE_MJWSD05MMC_EN) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
 				SET_LCD_UPDATE();
-#else
-				lcd_flg.update_next_measure = 0;
-#endif
 			}
 			ble_send_ext();
 #endif // DEV_SERVICES & SERVICE_SCREEN
