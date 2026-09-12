@@ -29,3 +29,7 @@ build.ninja
 python-interface/atc_mi_interface.egg-info/*
 python-interface/build/*
 python-interface/dist/*
+
+# Local IDE settings
+.vscode/settings.json
+
