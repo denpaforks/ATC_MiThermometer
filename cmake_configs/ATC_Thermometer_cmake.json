@@ -12,7 +12,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -43,7 +43,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -71,7 +71,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -102,7 +102,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -130,7 +130,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -161,7 +161,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -189,7 +189,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -220,7 +220,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -248,7 +248,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -279,7 +279,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -307,7 +307,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -339,7 +339,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -367,7 +367,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -399,7 +399,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -427,7 +427,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -458,7 +458,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -486,7 +486,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -517,7 +517,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -545,7 +545,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -576,7 +576,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -604,7 +604,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -635,7 +635,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -663,7 +663,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -694,7 +694,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -722,7 +722,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -754,7 +754,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -782,7 +782,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -814,7 +814,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -842,7 +842,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -874,7 +874,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -902,7 +902,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -934,7 +934,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -962,7 +962,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -993,7 +993,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1021,7 +1021,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1052,7 +1052,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1080,7 +1080,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1112,7 +1112,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1140,7 +1140,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1172,7 +1172,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1200,7 +1200,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1231,7 +1231,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1259,7 +1259,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1290,7 +1290,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1318,7 +1318,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1349,7 +1349,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1377,7 +1377,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1408,7 +1408,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1436,7 +1436,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1467,7 +1467,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1495,7 +1495,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1526,7 +1526,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1554,7 +1554,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1585,7 +1585,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1613,7 +1613,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1645,7 +1645,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1673,7 +1673,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1705,7 +1705,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1733,7 +1733,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1764,7 +1764,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1792,7 +1792,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1823,7 +1823,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1851,7 +1851,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1882,7 +1882,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1910,7 +1910,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -1941,7 +1941,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -1969,7 +1969,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -2000,7 +2000,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -2028,7 +2028,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -2059,7 +2059,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -2087,7 +2087,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -2118,7 +2118,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -2146,7 +2146,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -2177,7 +2177,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"
@@ -2205,7 +2205,7 @@
             "toolchainVersionName": "TC32-GCC Toolchain",
             "directories": [
                 "src",
-                "SDK"
+                "Telink_825X_SDK"
             ],
             "global_options": [],
             "asm_compile_options": [
@@ -2236,7 +2236,7 @@
                 "--gc-sections"
             ],
             "linker_directories": [
-                "SDK/components/proj_lib"
+                "Telink_825X_SDK/components/proj_lib"
             ],
             "linker_libraries": [
                 "lt_8258"

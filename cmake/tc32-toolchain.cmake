@@ -36,6 +36,11 @@ endif()
 # Normalise path separators (handles both / and \)
 file(TO_CMAKE_PATH "${TC32_TOOLCHAIN_PATH}" TC32_TOOLCHAIN_PATH)
 
+cmake_path(CONVERT "${TC32_TOOLCHAIN_PATH}" TO_NATIVE_PATH_LIST _TC32_NATIVE_PATH)
+if(NOT "$ENV{PATH}" MATCHES "${_TC32_NATIVE_PATH}")
+    set(ENV{PATH} "${_TC32_NATIVE_PATH};$ENV{PATH}")
+endif()
+
 set(_TC32 "${TC32_TOOLCHAIN_PATH}/tc32-elf-")
 
 # ─── Compiler / tool executables ──────────────────────────────────────────────

@@ -20,7 +20,7 @@ project(${PROJECT_NAME} LANGUAGES C ASM)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ─── Paths ─────────────────────────────────────────────────────────────────────
-set(SDK_PATH          "${CMAKE_SOURCE_DIR}/SDK")
+set(SDK_PATH          "${CMAKE_SOURCE_DIR}/Telink_825X_SDK")
 set(SDK_COMPONENTS    "${SDK_PATH}/components")
 set(SDK_LIB_PATH      "${SDK_COMPONENTS}/proj_lib")
 set(PROJECT_SRC       "${CMAKE_SOURCE_DIR}/src")

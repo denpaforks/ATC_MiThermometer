@@ -1,0 +1,3 @@
+[submodule "Telink_825X_SDK"]
+	path = Telink_825X_SDK
+	url = https://github.com/denpaforks/Telink_825X_SDK
