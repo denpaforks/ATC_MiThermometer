@@ -98,7 +98,7 @@ sensor:
 
 ### Prerequisites
 
-- [Telink TC32 Toolchain](https://github.com/pvvx/tc32) (`tc32-elf-gcc`)
+- Telink TC32 Toolchain (`tc32-elf-gcc`, downloaded via the [Telink VS Code Extension](https://marketplace.visualstudio.com/items?itemName=telink.tlk))
 - CMake $\ge$ 3.16 and Ninja / Make
 - Python 3
 
@@ -109,8 +109,6 @@ git submodule update --init --recursive
 cmake -B build -G "Ninja" -DCMAKE_TOOLCHAIN_FILE=cmake/tc32-toolchain.cmake
 cmake --build build
 ```
-
-Pre-configured build tasks are also available in `.vscode/tasks.json` for VS Code users.
 
 ---
 
