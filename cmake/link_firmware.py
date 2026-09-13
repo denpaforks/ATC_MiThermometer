@@ -121,7 +121,7 @@ def main():
             print(f"[WARN] Failed to generate .lst: {e}")
 
     # ── Firmware integrity check ─────────────────────────────────────────────
-    check_script = os.path.join(project_root, "utils", "tl_check_fw.py")
+    check_script = os.path.join(project_root, "cmake", "tl_check_fw.py")
     if os.path.exists(check_script):
         run([python_exe, check_script, bin_file], "Checking firmware")
     else:
@@ -136,7 +136,7 @@ def main():
     shutil.copy2(bin_file, target_bin)
 
     # ── Zigbee OTA image generation ──────────────────────────────────────────
-    ota_script = os.path.join(project_root, "utils", "zigbee_ota.py")
+    ota_script = os.path.join(project_root, "cmake", "zigbee_ota.py")
     ota_out = os.path.join(project_root, "zigbee_ota")
     if os.path.exists(ota_script):
         run(
