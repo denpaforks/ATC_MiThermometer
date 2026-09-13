@@ -72,7 +72,7 @@ void lcd(void) {
 #define _ble_con wrk.ble_connected
 #endif
 	bool show_ext = lcd_flg.chow_ext_ut >= wrk.utc_time_sec;
-	if(cfg.flg.show_time_smile || cfg.flg.show_batt_enabled || show_ext)
+	if((cfg.flg.show_time_smile || cfg.flg.show_batt_enabled) && !show_ext)
 		lcd_flg.update_next_measure = 0;
 	else
 		lcd_flg.update_next_measure = 1;
