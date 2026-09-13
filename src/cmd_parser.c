@@ -337,6 +337,7 @@ void cmd_parser(void * p) {
 					lcd_flg.chow_ext_ut = 0xffffffff;
 				else
 					lcd_flg.chow_ext_ut = wrk.utc_time_sec + ext.vtime_sec;
+				lcd_flg.has_ext = 1;
 				SET_LCD_UPDATE();
 			}
 			ble_send_ext();

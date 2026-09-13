@@ -10,9 +10,11 @@ In standard upstream firmware, external data sent via BLE command `0x22` (`CMD_I
 
 This fork turns the thermometer into an efficient, responsive wireless screen:
 
-1. **Exclusive External Display Mode (`src/lcd.c`)**:
-   - While external data remains valid (within `vtime_sec`), the display strictly shows the external data rather than alternating with local temperature and humidity measurements.
-   - If external updates cease and the validity timer expires (e.g., ESP32 goes offline), the display cleanly falls back to local sensor readings as a failsafe.
+1. **Dedicated Remote Display Mode (`src/lcd.c`, `src/lcd.h`, `src/app.c`)**:
+   - **Pre-Connection / Reset**: Until external data is received for the first time after a reset, the thermometer displays local sensor readings and the Bluetooth indicator stays off.
+   - **Active Remote Session**: Once external data is received, the display strictly renders the remote values without cycling with local sensor readings or clock/battery screens. The Bluetooth indicator stays **steady ON** throughout the validity period (`vtime_sec`).
+   - **Deep Sleep Optimization**: While valid external data is on screen, the MCU suppresses periodic ~2.45s LCD refresh wakeups, keeping the processor in deep retention sleep and conserving battery.
+   - **Connection Lost / Stale Data Indication**: If the validity timer expires (e.g., ESP32 goes offline or Wi-Fi drops), the remote data **remains on screen** (avoiding sudden confusion with local room temperature) while the Bluetooth indicator **blinks** every ~2.45s to signal a stale connection. Normal steady display and sleep resume immediately when a new packet arrives.
 
 2. **Zero-Latency Screen Updates (`src/cmd_parser.c`)**:
    - Invokes `SET_LCD_UPDATE()` immediately when `CMD_ID_EXTDATA` is received over BLE.
@@ -88,7 +90,7 @@ sensor:
 - **Battery Optimization (CR2032)**:
   Each BLE connection draws ~8–12 mA during radio exchange. The conditional update pattern above keeps radio activity to a minimum, allowing the coin cell to last for months.
 - **Heartbeat vs. Validity Margin**:
-  Ensure your sensor `heartbeat` interval (e.g. 120s) is comfortably shorter than the display's `validity_period` (e.g. 300s) so static readings don't expire and trigger fallback to local sensor data.
+  Ensure your sensor `heartbeat` interval (e.g. 120s) is comfortably shorter than the display's `validity_period` (e.g. 300s) so static readings don't inadvertently trigger the blinking disconnected indicator.
 - **Device Config Settings**:
   In the web flasher configuration ([TelinkMiFlasher](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)), make sure **"Show battery"** and **"Show clock"** are disabled so they do not periodically override the external display fields. You can also increase the internal measurement interval to conserve battery power.
 

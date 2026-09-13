@@ -64,137 +64,83 @@ __attribute__((optimize("-Os")))
 void lcd(void) {
 	if(cfg.flg2.screen_off)
 		return;
-	bool set_small_number_and_bat = true;
 
 #if (DEV_SERVICES & SERVICE_KEY) || (DEV_SERVICES & SERVICE_RDS)
 	bool _ble_con =	wrk.ble_connected != 0 || (ext_key.rest_adv_int_tad & 2) != 0;
 #else
 #define _ble_con wrk.ble_connected
 #endif
-	bool show_ext = lcd_flg.chow_ext_ut >= wrk.utc_time_sec;
-	if((cfg.flg.show_time_smile || cfg.flg.show_batt_enabled) && !show_ext)
+
+	if (lcd_flg.has_ext) {
+		bool ext_valid = (lcd_flg.chow_ext_ut == 0xffffffff || lcd_flg.chow_ext_ut >= wrk.utc_time_sec);
+		lcd_flg.update_next_measure = ext_valid ? 1 : 0;
+
+#if	(SHOW_SMILEY)
+		show_smiley(*((u8 *) &ext.flg));
+#endif
+		show_battery_symbol(ext.flg.battery);
+#if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
+		show_small_number_x10(ext.small_number, ext.flg.percent_on);
+#else
+		show_small_number(ext.small_number, ext.flg.percent_on);
+#endif
+		show_temp_symbol(*((u8 *) &ext.flg));
+		show_big_number_x10(ext.big_number);
+
+		if (ext_valid) {
+			show_ble_symbol(1); // Steady ON during validity period
+		} else {
+			show_ble_symbol(lcd_flg.show_stage & 1); // Blinking when expired
+		}
+		return;
+	}
+
+	bool set_small_number_and_bat = true;
+	if (cfg.flg.show_time_smile || cfg.flg.show_batt_enabled)
 		lcd_flg.update_next_measure = 0;
 	else
 		lcd_flg.update_next_measure = 1;
-	if (lcd_flg.chow_ext_ut == 0xffffffff) {
-#if	(SHOW_SMILEY)
-			show_smiley(*((u8 *) &ext.flg));
-#endif
-			show_battery_symbol(ext.flg.battery);
-#if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-			show_small_number_x10(ext.small_number, ext.flg.percent_on);
-#else
-			show_small_number(ext.small_number, ext.flg.percent_on);
-#endif
-			show_temp_symbol(*((u8 *) &ext.flg));
-			show_big_number_x10(ext.big_number);
+	if (lcd_flg.show_stage & 1) { // stage clock/blinking or show battery
+#if	USE_DISPLAY_CLOCK
+		if (cfg.flg.show_time_smile && (lcd_flg.show_stage & 2)) {
+			show_clock(); // stage clock
 			show_ble_symbol(_ble_con);
 			return;
-	}
-	if (show_ext) { // show ext data (exclusively while valid, no alternating with local data)
-		if (lcd_flg.show_stage & 1) { // stage blinking or show battery or clock
-			if (cfg.flg.show_batt_enabled
-#if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-#else
-				|| measured_data.battery_level <= 5
-#endif
-				) { // Battery
-#if	(SHOW_SMILEY)
-				show_smiley(0); // stage show battery
-#endif
-				show_battery_symbol(1);
-#if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-#if DEVICE_TYPE == DEVICE_CGG1
-				show_batt_cgg1();
-#elif (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-				show_batt_lyws02();
-#else
-				show_batt_cgdk2();
-#endif
-#else
-				show_small_number((measured_data.battery_level >= 100) ? 99 : measured_data.battery_level, 1);
-#endif // (DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2)
-				set_small_number_and_bat = false;
-			} else if (cfg.flg.show_time_smile) { // show clock
-#if	USE_DISPLAY_CLOCK
-				show_clock(); // stage clock
-				show_ble_symbol(_ble_con);
-				return;
-#else
-#if	(SHOW_SMILEY)
-				show_smiley(0); // stage clock/blinking and blinking on
-#endif
-#endif // USE_DISPLAY_CLOCK
-			}
-#if	(SHOW_SMILEY)
-			else
-				show_smiley(*((u8 *) &ext.flg));
-#endif
 		}
-#if	(SHOW_SMILEY)
-		else
-			show_smiley(*((u8 *) &ext.flg));
 #endif
-		if (set_small_number_and_bat) {
-			show_battery_symbol(ext.flg.battery);
-#if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-			show_small_number_x10(ext.small_number, ext.flg.percent_on);
-#else
-			show_small_number(ext.small_number, ext.flg.percent_on);
-#endif
-		}
-		show_temp_symbol(*((u8 *) &ext.flg));
-		show_big_number_x10(ext.big_number);
-	} else {
-		if (lcd_flg.show_stage & 1) { // stage clock/blinking or show battery
-#if	USE_DISPLAY_CLOCK
-			if (cfg.flg.show_time_smile && (lcd_flg.show_stage & 2)) {
-				show_clock(); // stage clock
-				show_ble_symbol(_ble_con);
-				return;
-			}
-#endif
-			if (cfg.flg.show_batt_enabled
+		if (cfg.flg.show_batt_enabled
 #if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LKTMZL02) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
 
 #else
-				|| measured_data.battery_level <= 5
+			|| measured_data.battery_level <= 5
 #endif
-				) { // Battery
+			) { // Battery
 #if	(SHOW_SMILEY)
-				show_smiley(0); // stage show battery
+			show_smiley(0); // stage show battery
 #endif
-				show_battery_symbol(1);
+			show_battery_symbol(1);
 #if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
 #if (DEVICE_TYPE == DEVICE_CGG1)
-				show_batt_cgg1();
+			show_batt_cgg1();
 #elif (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-				show_batt_lyws02();
+			show_batt_lyws02();
 #else
-				show_batt_cgdk2();
+			show_batt_cgdk2();
 #endif
 #else
-				show_small_number((measured_data.battery_level >= 100) ? 99 : measured_data.battery_level, 1);
+			show_small_number((measured_data.battery_level >= 100) ? 99 : measured_data.battery_level, 1);
 #endif // (DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2)
-				set_small_number_and_bat = false;
-			} else if (cfg.flg.show_time_smile) { // show clock
+			set_small_number_and_bat = false;
+		} else if (cfg.flg.show_time_smile) { // show clock
 #if	USE_DISPLAY_CLOCK
-				show_clock(); // stage clock
-				show_ble_symbol(_ble_con);
-				return;
+			show_clock(); // stage clock
+			show_ble_symbol(_ble_con);
+			return;
 #else
 #if	(SHOW_SMILEY)
-				show_smiley(0); // stage blinking and blinking on
+			show_smiley(0); // stage blinking and blinking on
 #endif
 #endif // USE_DISPLAY_CLOCK
-			} else {
-#if	(SHOW_SMILEY)
-				if (cfg.flg.comfort_smiley) { // comfort on
-					show_smiley(is_comfort(measured_data.temp, measured_data.humi));
-				} else
-					show_smiley(cfg.flg2.smiley);
-#endif
-			}
 		} else {
 #if	(SHOW_SMILEY)
 			if (cfg.flg.comfort_smiley) { // comfort on
@@ -203,26 +149,33 @@ void lcd(void) {
 				show_smiley(cfg.flg2.smiley);
 #endif
 		}
-		if (set_small_number_and_bat) {
+	} else {
+#if	(SHOW_SMILEY)
+		if (cfg.flg.comfort_smiley) { // comfort on
+			show_smiley(is_comfort(measured_data.temp, measured_data.humi));
+		} else
+			show_smiley(cfg.flg2.smiley);
+#endif
+	}
+	if (set_small_number_and_bat) {
 #if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
-			show_battery_symbol(!cfg.flg.show_batt_enabled);
-			show_small_number_x10(measured_data.humi_x01, 1);
+		show_battery_symbol(!cfg.flg.show_batt_enabled);
+		show_small_number_x10(measured_data.humi_x01, 1);
 #else
 #if	(DEVICE_TYPE == DEVICE_LKTMZL02)
-			show_battery_symbol(!cfg.flg.show_batt_enabled);
+		show_battery_symbol(!cfg.flg.show_batt_enabled);
 #else
-			show_battery_symbol(0);
+		show_battery_symbol(0);
 #endif
-			show_small_number(measured_data.humi_x1, 1);
+		show_small_number(measured_data.humi_x1, 1);
 #endif
-		}
-		if (cfg.flg.temp_F_or_C) {
-			show_temp_symbol(TMP_SYM_F); // "°F"
-			show_big_number_x10(((s32)((s32)measured_data.temp * 9)/ 50) + 320); // convert C to F
-		} else {
-			show_temp_symbol(TMP_SYM_C); // "°C"
-			show_big_number_x10(measured_data.temp_x01);
-		}
+	}
+	if (cfg.flg.temp_F_or_C) {
+		show_temp_symbol(TMP_SYM_F); // "°F"
+		show_big_number_x10(((s32)((s32)measured_data.temp * 9)/ 50) + 320); // convert C to F
+	} else {
+		show_temp_symbol(TMP_SYM_C); // "°C"
+		show_big_number_x10(measured_data.temp_x01);
 	}
 	show_ble_symbol(_ble_con);
 }

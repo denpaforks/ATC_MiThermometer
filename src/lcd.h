@@ -22,6 +22,7 @@ typedef struct _lcd_flg_t {
 #endif
 #endif
 	u8 update; 	  // flag update LCD
+	u8 has_ext; 	  // flag external data received since reset
 	union {
 		struct {
 			// reset all flags on disconnect

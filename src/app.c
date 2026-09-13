@@ -1291,6 +1291,8 @@ void main_loop(void) {
 				if (new - lcd_flg.tim_last_chow >= lcd_flg.min_step_time_update_lcd) {
 					lcd_flg.tim_last_chow = new;
 					lcd_flg.show_stage++;
+					if (lcd_flg.has_ext && lcd_flg.chow_ext_ut != 0xffffffff && wrk.utc_time_sec > lcd_flg.chow_ext_ut)
+						lcd_flg.update_next_measure = 0;
 					if(lcd_flg.update_next_measure) {
 						lcd_flg.update = wrk.msc.b.update_lcd;
 						wrk.msc.b.update_lcd = 0;
