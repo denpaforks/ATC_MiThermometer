@@ -91,7 +91,7 @@ void lcd(void) {
 			show_ble_symbol(_ble_con);
 			return;
 	}
-	if (show_ext && (lcd_flg.show_stage & 2)) { // show ext data
+	if (show_ext) { // show ext data (exclusively while valid, no alternating with local data)
 		if (lcd_flg.show_stage & 1) { // stage blinking or show battery or clock
 			if (cfg.flg.show_batt_enabled
 #if	(DEVICE_TYPE == DEVICE_CGG1) || (DEVICE_TYPE == DEVICE_CGDK2) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
