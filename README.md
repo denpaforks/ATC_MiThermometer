@@ -26,7 +26,11 @@ This fork turns the thermometer into an efficient, responsive wireless screen:
 
 ## ESPHome Integration
 
-Use the official ESPHome `pvvx_mithermometer` display component with an active `ble_client`:
+Use the official ESPHome `pvvx_mithermometer` display component with an active `ble_client`.
+
+### Recommended Pattern: Conditional Updates on Significant Changes
+
+To maximize battery life and avoid unnecessary BLE traffic, set `update_interval: never` on the display component and trigger screen updates on-demand. Using a combination of `delta` and `heartbeat` filters ensures updates occur only on significant value changes or as a periodic keep-alive. A debouncing script with `mode: restart` and a 1-second delay prevents colliding back-to-back updates when multiple sensors report concurrently:
 
 ```yaml
 esp32_ble_tracker:
@@ -37,23 +41,54 @@ ble_client:
 
 display:
   - platform: pvvx_mithermometer
+    id: my_display
     ble_client_id: ble_display
-    update_interval: 60s
-    validity_period: 300s
+    update_interval: never # Updates triggered on-demand via script
+    validity_period: 300s  # Must exceed the sensor heartbeat interval
     lambda: |-
       it.print_bignum(id(power_usage).state);
       it.print_unit(pvvx_mithermometer::UNIT_NONE);
       it.print_smallnum(id(outside_temp).state);
       it.print_percent(false);
       it.print_happy(true);
+
+# Debounce script: collapses near-simultaneous sensor changes into a single BLE connection
+script:
+  - id: trigger_display_update
+    mode: restart
+    then:
+      - delay: 1s
+      - component.update: my_display
+
+# Example sensors triggering the display update
+sensor:
+  - platform: homeassistant
+    id: power_usage
+    entity_id: sensor.household_power
+    filters:
+      - delta: 10.0      # Only trigger on changes >= 10 W
+      - heartbeat: 120s  # Keep-alive to prevent validity_period timeout
+    on_value:
+      then:
+        - script.execute: trigger_display_update
+
+  - platform: homeassistant
+    id: outside_temp
+    entity_id: sensor.outside_temperature
+    filters:
+      - delta: 0.5       # Only trigger on changes >= 0.5 °C
+      - heartbeat: 120s
+    on_value:
+      then:
+        - script.execute: trigger_display_update
 ```
 
 ### Best Practices for Wireless Display Use
 
 - **Battery Optimization (CR2032)**:
-  Each BLE connection draws ~8–12 mA during radio exchange. Keep `update_interval` at **60–120s** (or trigger updates conditionally on significant sensor changes) to maintain multi-month battery life.
-- **Validity Margin**:
-  Set `validity_period` to $2\times$–$3\times$ your `update_interval` so temporary RF interference does not cause premature fallback to local sensor data.
+  Each BLE connection draws ~8–12 mA during radio exchange. The conditional update pattern above keeps radio activity to a minimum, allowing the coin cell to last for months.
+- **Heartbeat vs. Validity Margin**:
+  Ensure your sensor `heartbeat` interval (e.g. 120s) is comfortably shorter than the display's `validity_period` (e.g. 300s) so static readings don't expire and trigger fallback to local sensor data.
 - **Device Config Settings**:
   In the web flasher configuration ([TelinkMiFlasher](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)), make sure **"Show battery"** and **"Show clock"** are disabled so they do not periodically override the external display fields. You can also increase the internal measurement interval to conserve battery power.
 
