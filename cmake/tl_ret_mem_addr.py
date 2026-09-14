@@ -1,100 +1,78 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+"""
+tl_ret_mem_addr.py - TLSR825x Retention Memory Address Calculator
+Originally by pvvx
 
-### tl_ret_mem_addr.py ###
-###  Author: pvvx   ###
+Extracts the retention data end address or ictag start address from
+an ELF binary to compute the optimal -Ttext address for the linker.
+"""
 
-import sys
-import signal
-import struct
-import platform
-import time
+from __future__ import annotations
+
 import argparse
 import subprocess
-import os
-import io
-
-__progname__ = "TLSR825x Check RetentionMem Address"
-__filename__ = "tl_ret_mem_addr"
-__version__ = "20.11.20"
-
-SRAM_BASE_ADDR = 0x840000
+import sys
 
 
-class FatalError(RuntimeError):
-    def __init__(self, message):
-        RuntimeError.__init__(self, message)
+def parse_symbols(elf_path: str, nm_tool: str) -> dict[str, int]:
+    """Extract symbol addresses from an ELF binary using tc32-elf-nm."""
+    try:
+        proc = subprocess.run(
+            [nm_tool, elf_path],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except FileNotFoundError:
+        print(
+            f"Error: Tool '{nm_tool}' not found. Check toolchain PATH.", file=sys.stderr
+        )
+        sys.exit(1)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running '{nm_tool}':\n{e.stderr}", file=sys.stderr)
+        sys.exit(1)
 
-    @staticmethod
-    def WithResult(message, result):
-        message += " (result was %s)" % hexify(result)
-        return FatalError(message)
-
-
-def signal_handler(signal, frame):
-    print()
-    print("Keyboard Break!")
-    sys.exit(0)
-
-
-def arg_auto_int(x):
-    return int(x, 0)
-
-
-class ELFFile:
-
-    def __init__(self, name, tool_nm):
-        self.name = name
-        self.tool_nm = tool_nm
-        self.symbols = {}
-        try:
-            # if sys.platform == 'linux2':
-            # 	tool_nm = "tc32-elf-nm"
-            proc = subprocess.Popen([self.tool_nm, self.name], stdout=subprocess.PIPE)
-        except OSError:
-            print("Error calling " + self.tool_nm + ", do you have toolchain in PATH?")
-            sys.exit(1)
-        for l in proc.stdout:
-            fields = l.strip().split()
+    symbols: dict[str, int] = {}
+    for line in proc.stdout.splitlines():
+        fields = line.strip().split()
+        if len(fields) >= 3 and fields[1] not in ("w", "W"):
             try:
-                if fields[0] == b"U":
-                    # print("Warning: Undefined symbol '%s'!" %(fields[1].decode('ASCII')))
-                    continue
-                if fields[0] == b"w":
-                    continue  # can skip weak symbols
-                self.symbols[fields[2]] = int(fields[0], 16)
+                symbols[fields[2]] = int(fields[0], 16)
             except ValueError:
-                raise FatalError("Failed to strip symbol output from nm: %s" % fields)
-
-    def get_symbol_addr(self, sym, default=0):
-        try:
-            x = self.symbols[sym]
-        except:
-            return default
-        return x
+                continue
+    return symbols
 
 
-def main():
-
-    signal.signal(signal.SIGINT, signal_handler)
+def main() -> None:
     parser = argparse.ArgumentParser(
-        description="%s version %s" % (__progname__, __version__), prog=__filename__
+        prog="tl_ret_mem_addr",
+        description="Calculate optimal TLSR825x linker -Ttext address from ELF symbols",
     )
-    parser.add_argument("-e", "--elffile", help="Name of elf file", default="out.elf")
     parser.add_argument(
-        "-t", "--tools", help="Path and name tc32-elf-nm", default="tc32-elf-nm"
+        "-e",
+        "--elffile",
+        default="out.elf",
+        help="Path to ELF file (default: out.elf)",
+    )
+    parser.add_argument(
+        "-t",
+        "--tools",
+        default="tc32-elf-nm",
+        help="Path and name of tc32-elf-nm (default: tc32-elf-nm)",
     )
     args = parser.parse_args()
 
-    e = ELFFile(args.elffile, args.tools)
-    rrs = e.get_symbol_addr(b"_retention_data_end_")
-    if rrs == 0:
-        rrs = e.get_symbol_addr(b"_ictag_start_")
-    if rrs > 0:
-        rrs = (rrs + 255) & 0x0001FF00
-        print("0x%x" % rrs)
+    symbols = parse_symbols(args.elffile, args.tools)
+
+    ret_end = symbols.get("_retention_data_end_", 0)
+    if ret_end == 0:
+        ret_end = symbols.get("_ictag_start_", 0)
+
+    if ret_end > 0:
+        ttext_addr = (ret_end + 255) & 0x0001FF00
+        print(f"0x{ttext_addr:x}")
     else:
         print("0x8000")
-    sys.exit(0)
 
 
 if __name__ == "__main__":
