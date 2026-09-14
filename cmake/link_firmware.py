@@ -72,14 +72,17 @@ def main():
     run(common_link, "Pass 1: initial link")
 
     # ── Compute optimal -Ttext address ───────────────────────────────────────
-    ttext_script = os.path.join(project_root, "src", "TlsrRetMemAddr.py")
+    ttext_script = os.path.join(project_root, "cmake", "tl_ret_mem_addr.py")
     result = subprocess.run(
         [python_exe, ttext_script, "-e", elf_file, "-t", tc32_nm],
         capture_output=True,
         text=True,
     )
     if result.returncode != 0:
-        print(f"[ERROR] TlsrRetMemAddr.py failed:\n{result.stderr}", file=sys.stderr)
+        print(
+            f"[ERROR] {os.path.basename(ttext_script)} failed:\n{result.stderr}",
+            file=sys.stderr,
+        )
         sys.exit(result.returncode)
 
     ttext_addr = result.stdout.strip()
@@ -103,6 +106,16 @@ def main():
         + ["-llt_8258"]
     )
     run(optimised_link, "Pass 2: re-link with -Ttext optimisation")
+
+    # ── Memory usage report & Retention SRAM check ───────────────────────────
+    meminfo_script = os.path.join(project_root, "cmake", "tl_mem_info.py")
+    if os.path.exists(meminfo_script):
+        run(
+            [python_exe, meminfo_script, "-s", "32768", "-t", tc32_nm, elf_file],
+            "Analyzing memory layout & Retention SRAM",
+        )
+    else:
+        print(f"[SKIP] tl_mem_info.py not found at {meminfo_script}")
 
     # ── Generate binary image ────────────────────────────────────────────────
     run([tc32_objcopy, "-v", "-O", "binary", elf_file, bin_file], "Generating .bin")
