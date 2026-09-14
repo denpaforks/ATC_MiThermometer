@@ -45,10 +45,19 @@ jobs:
         run: |
           cmake --build build
 
+      - name: Prepare distribution artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist
+          Copy-Item -Path bin\* -Destination dist\
+          if (Test-Path zigbee_ota) {
+            Copy-Item -Path zigbee_ota -Destination dist\zigbee_ota -Recurse
+          }
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bin
+          publish_dir: ./dist
           publish_branch: gh-pages
 
