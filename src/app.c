@@ -86,76 +86,76 @@ const cfg_t def_cfg = {
 		.flg3.adv_interval_delay = 10,
 #if (DEVICE_TYPE == DEVICE_MJWSD05MMC) || (DEVICE_TYPE == DEVICE_MJWSD05MMC_EN)
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.hw_ver = HW_VER_MJWSD05MMC,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_LYWSD03MMC
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = HW_VER_LYWSD03MMC_B14,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_MHO_C401
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 8, // * advertising_interval = 20 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 99, //x0.05 sec,   4.95 sec
 		.hw_ver = HW_VER_MHO_C401,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_MHO_C401N
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 8, // * advertising_interval = 20 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 99, //x0.05 sec,   4.95 sec
 		.hw_ver = HW_VER_MHO_C401_2022,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_CGG1
 #if DEVICE_CGG1_ver == 2022
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = HW_VER_CGG1_2022,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #else
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 8, // * advertising_interval = 20 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 99, //x0.05 sec,   4.95 sec
 		.hw_ver = HW_VER_CGG1,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #endif
 #elif DEVICE_TYPE == DEVICE_CGDK2
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
 		.flg.comfort_smiley = false,
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = HW_VER_CGDK2,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_MHO_C122
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = HW_VER_MHO_C122,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_TNK01)
 		.flg2.adv_flags = true,
@@ -183,129 +183,129 @@ const cfg_t def_cfg = {
 #endif
 #elif (DEVICE_TYPE == DEVICE_TS0201) || (DEVICE_TYPE == DEVICE_TH03Z) || (DEVICE_TYPE == DEVICE_ZTH01) || (DEVICE_TYPE == DEVICE_ZTH02)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_PLM1)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif DEVICE_TYPE == DEVICE_ZTH03
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif DEVICE_TYPE == DEVICE_LKTMZL02
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif DEVICE_TYPE == DEVICE_ZTH05Z
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif (DEVICE_TYPE == DEVICE_ZYZTH01)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif (DEVICE_TYPE == DEVICE_ZYZTH02)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif (DEVICE_TYPE == DEVICE_ZG_227Z)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif (DEVICE_TYPE == DEVICE_ZBEACON_TH01) || (DEVICE_TYPE == DEVICE_ZBEACON2TH01) || (DEVICE_TYPE == DEVICE_ZB_MC)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 
 #elif DEVICE_TYPE == DEVICE_MJWSD06MMC
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 90 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_ZG303Z)
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_LYWSD02MMC)
 		.flg2.adv_flags = true,
 		.advertising_interval = 60, // multiply by 62.5 ms = 3.750 sec
-		.measure_interval = 4, // * advertising_interval = 15 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 120, // * measure_interval = 15 * 120 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_ZG204ZV)
 		.flg2.adv_flags = true,
 		.advertising_interval = 80, // multiply by 62.5 ms = 5 sec
-		.measure_interval = 4, // * advertising_interval = 20 sec
+		.measure_interval = 6, // * advertising_interval = 30 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 90, // * measure_interval = 20 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #elif (DEVICE_TYPE == DEVICE_TS0201_WING)
 		.flg2.adv_flags = true,
-		.advertising_interval = 40, // multiply by 62.5 ms = 2.5 sec
-		.measure_interval = 4, // * advertising_interval = 10 sec
+		.advertising_interval = 60, // multiply by 62.5 ms = 3.75 sec
+		.measure_interval = 8, // * advertising_interval = 30 sec
 		.min_step_time_update_lcd = 49, //x0.05 sec,   2.45 sec
 		.hw_ver = DEVICE_TYPE,
 #if (DEV_SERVICES & SERVICE_HISTORY)
-		.averaging_measurements = 180, // * measure_interval = 10 * 180 = 1800 sec = 30 minutes
+		.averaging_measurements = 60, // * measure_interval = 30 * 60 = 1800 sec = 30 minutes
 #endif
 #else
 #error "DEVICE_TYPE = ?"
