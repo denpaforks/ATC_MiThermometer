@@ -139,6 +139,7 @@ def main():
     ota_script = os.path.join(project_root, "cmake", "zigbee_ota.py")
     ota_out = os.path.join(project_root, "zigbee_ota")
     if os.path.exists(ota_script):
+        os.makedirs(ota_out, exist_ok=True)
         run(
             [python_exe, ota_script, bin_file, "-p", ota_out],
             "Generating Zigbee OTA image",
