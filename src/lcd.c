@@ -90,7 +90,7 @@ void lcd(void) {
 		if (ext_valid) {
 			show_ble_symbol(1); // Steady ON during validity period
 		} else {
-			show_ble_symbol(lcd_flg.show_stage & 1); // Blinking when expired
+			show_ble_symbol(wrk.utc_time_sec & 1); // 1s blink when stale
 		}
 		return;
 	}
