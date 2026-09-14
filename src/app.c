@@ -315,6 +315,9 @@ RAM cfg_t cfg;
 
 #if (DEV_SERVICES & SERVICE_SCREEN)
 
+// Placeholder loaded at startup so ext fields are defined before the first
+// CMD_ID_EXTDATA packet arrives.  has_ext remains 0 until that real packet
+// sets it, so this vtime_sec value never triggers the stale-connection blink.
 static const external_data_t def_ext = {
 #if (DEVICE_TYPE == DEVICE_MJWSD05MMC) || (DEVICE_TYPE == DEVICE_MJWSD05MMC_EN) || (DEVICE_TYPE == DEVICE_LYWSD02MMC)
 		.number = 1234500,
@@ -325,7 +328,7 @@ static const external_data_t def_ext = {
 #else
 		.big_number = 0,
 		.small_number = 0,
-		.vtime_sec = 60, // 1 minutes
+		.vtime_sec = 60, // 1 minute
 		.flg.smiley = 7, // 7 = "(ooo)"
 		.flg.percent_on = true,
 		.flg.battery = false,

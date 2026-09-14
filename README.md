@@ -96,7 +96,7 @@ sensor:
 - **Battery Optimization (CR2032)**:
   Each BLE connection draws ~8–12 mA during radio exchange. The conditional update pattern above keeps radio activity to a minimum, allowing the coin cell to last for months.
 - **Heartbeat vs. Validity Margin**:
-  Ensure your sensor `heartbeat` interval (e.g. 120s) is comfortably shorter than the display's `validity_period` (e.g. 300s) so static readings don't inadvertently trigger the blinking disconnected indicator.
+  Ensure your sensor `heartbeat` interval (e.g. 120s) is comfortably shorter than the display's `validity_period` (e.g. 300s) so static readings don't inadvertently trigger the blinking disconnected indicator. Note that the effective safety margin is also reduced by ESPHome's BLE reconnection time (typically 10–30s), so the true minimum gap is `validity_period - heartbeat_interval - ble_reconnect_time`. With the example values above that leaves ~150s of headroom, which is more than sufficient.
 - **Device Config Settings**:
   In the web flasher configuration ([TelinkMiFlasher](https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html)), make sure **"Show battery"** and **"Show clock"** are disabled so they do not periodically override the external display fields. You can also increase the internal measurement interval to conserve battery power.
 
