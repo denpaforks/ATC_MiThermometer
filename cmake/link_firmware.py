@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Two-pass linker + post-processing script for ATC_MiThermometer (TLSR8258).
+link_firmware.py - Two-pass linker + post-processing script for TLSR8258
 
-Called by CMake at build time.  All paths come from CMake generator expressions
+Called by CMake at build time. All paths come from CMake generator expressions
 so they are always absolute and properly resolved.
 
 Usage (internal – called by CMakeLists.txt):
@@ -13,12 +13,15 @@ Usage (internal – called by CMakeLists.txt):
                             [object_file ...]
 """
 
+from __future__ import annotations
+
+import os
+import shutil
 import subprocess
 import sys
-import os
 
 
-def run(cmd, description=""):
+def run(cmd: list[str], description: str = "") -> None:
     """Run a command; abort on non-zero exit."""
     if description:
         print(f">>> {description}")
@@ -32,7 +35,7 @@ def run(cmd, description=""):
         sys.exit(result.returncode)
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 10:
         print(
             "Usage: link_firmware.py <ld> <nm> <objcopy> <elf> <bin> "
@@ -144,8 +147,6 @@ def main():
     bin_dir = os.path.join(project_root, "bin")
     os.makedirs(bin_dir, exist_ok=True)
     target_bin = os.path.join(bin_dir, os.path.basename(bin_file))
-    import shutil
-
     shutil.copy2(bin_file, target_bin)
 
     # ── Zigbee OTA image generation ──────────────────────────────────────────
