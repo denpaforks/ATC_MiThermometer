@@ -4,6 +4,12 @@ A specialized fork of [pvvx's ATC_MiThermometer](https://github.com/pvvx/ATC_MiT
 
 ---
 
+> [!WARNING]
+> **Stock Firmware Version 2.1.1_0159 & Hardware Revisions Notice:**
+> - [Stock firmware version `2.1.1_0159` requires registration in Mi Home and obtaining bind keys/IDs](https://github.com/pvvx/ATC_MiThermometer/issues/602#issue-2786915630) before it can be flashed OTA.
+> - Xiaomi LYWSD03MMC versions **B1.5 / B1.6** (manufactured since 2025.03) are not recommended for purchase due to [higher current consumption](https://github.com/pvvx/ATC_MiThermometer/issues/664#issuecomment-3092344109) and [low-contrast LCD displays](https://github.com/pvvx/ATC_MiThermometer/discussions/663#discussioncomment-13440647).
+> - New LYWSD03MMC units with HW **B1.6** use original firmware that is incompatible with older HW versions. Follow the [upstream instructions](https://github.com/pvvx/ATC_MiThermometer/issues/602) for the initial OTA flashing procedure.
+
 ## Purpose & Key Modifications
 
 In standard upstream firmware, external data sent via BLE command `0x22` (`CMD_ID_EXTDATA`) is treated as a secondary view in a periodic carousel, cycling back and forth between external data and local sensor readings every ~2.5 seconds. In addition, LCD refreshes were queued for the next periodic timer tick rather than applied immediately.
