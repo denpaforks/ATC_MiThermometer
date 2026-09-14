@@ -1,0 +1,40 @@
+# clang-format configuration for ATC_MiThermometer
+# Matches the pvvx upstream style: tabs, K&R braces, no space before call parens.
+#
+# Format-on-save is intentionally disabled in .vscode/settings.json to avoid
+# noisy diffs against the upstream codebase. Run manually with:
+#   Shift+Alt+F  (Format Document)
+#   Shift+Alt+F  on a selection (Format Selection)
+
+Language: Cpp
+BasedOnStyle: LLVM
+
+# ── Indentation ────────────────────────────────────────────────────────────────
+UseTab: ForIndentation
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+
+# ── Braces ─────────────────────────────────────────────────────────────────────
+BreakBeforeBraces: Attach   # K&R: opening brace on same line
+
+# ── Spaces ─────────────────────────────────────────────────────────────────────
+SpaceBeforeParens: ControlStatements   # space before if/for/while, not function calls
+SpaceAfterCStyleCast: false
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+
+# ── Line length ────────────────────────────────────────────────────────────────
+# Upstream lines are long; set a generous limit and let preprocessor lines through.
+ColumnLimit: 120
+PenaltyBreakBeforeFirstCallParameter: 1000  # prefer keeping call args on one line
+
+# ── Preprocessor ───────────────────────────────────────────────────────────────
+IndentPPDirectives: None    # keep #if / #endif at column 0 (upstream style)
+SortIncludes: Never         # upstream include order is intentional
+
+# ── Alignment ─────────────────────────────────────────────────────────────────
+AlignTrailingComments: true
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
