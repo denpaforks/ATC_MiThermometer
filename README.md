@@ -20,7 +20,7 @@ This fork turns the thermometer into an efficient, responsive wireless screen:
    - **Pre-Connection / Reset**: Until external data is received for the first time after a reset, the thermometer displays local sensor readings and the Bluetooth indicator stays off.
    - **Active Remote Session**: Once external data is received, the display strictly renders the remote values without cycling with local sensor readings or clock/battery screens. The Bluetooth indicator stays **steady ON** throughout the validity period (`vtime_sec`).
    - **Deep Sleep Optimization**: While valid external data is on screen, the MCU suppresses periodic ~2.45s LCD refresh wakeups, keeping the processor in deep retention sleep and conserving battery.
-   - **Connection Lost / Stale Data Indication**: If the validity timer expires (e.g., ESP32 goes offline or Wi-Fi drops), the remote data **remains on screen** (avoiding sudden confusion with local room temperature) while the Bluetooth indicator **blinks** every ~2.45s to signal a stale connection. Normal steady display and sleep resume immediately when a new packet arrives.
+   - **Connection Lost / Stale Data Indication**: If the validity timer expires (e.g., ESP32 goes offline or Wi-Fi drops), the remote data **remains on screen** (avoiding sudden confusion with local room temperature) while the Bluetooth indicator **blinks at 1 Hz** to clearly signal a stale connection. Normal steady display and sleep resume immediately when a new packet arrives.
 
 2. **Zero-Latency Screen Updates (`src/cmd_parser.c`)**:
    - Invokes `SET_LCD_UPDATE()` immediately when `CMD_ID_EXTDATA` is received over BLE.
