@@ -4,8 +4,10 @@
 # The toolchain binary directory is resolved in this order:
 #   1. CMake variable  TC32_TOOLCHAIN_PATH  (pass via -DTC32_TOOLCHAIN_PATH=...)
 #   2. Environment variable  TC32_TOOLCHAIN_PATH
-#   3. Default install location used by the Telink VSCode Extension
-#      (~/.Telink_Tools/tc32_130_Windows/tc32/bin)
+#   3. Default install location used by the Telink VSCode Extension:
+#        Windows : %USERPROFILE%/.Telink_Tools/tc32_130_Windows/tc32/bin
+#        macOS   : $HOME/.Telink_Tools/tc32_130_MacOS/tc32/bin
+#        Linux   : $HOME/.Telink_Tools/tc32_130_Linux/tc32/bin
 # ──────────────────────────────────────────────────────────────────────────────
 
 set(CMAKE_SYSTEM_NAME      Generic)
@@ -27,27 +29,48 @@ if(NOT TC32_TOOLCHAIN_PATH)
     elseif(DEFINED ENV{TC32_TOOLCHAIN_PATH})
         set(TC32_TOOLCHAIN_PATH "$ENV{TC32_TOOLCHAIN_PATH}")
     else()
-        # Default: Telink VSCode Extension install location (Windows)
-        set(TC32_TOOLCHAIN_PATH
-            "$ENV{USERPROFILE}/.Telink_Tools/tc32_130_Windows/tc32/bin")
+        # Default: Telink VSCode Extension install location (platform-specific)
+        if(WIN32)
+            set(_TC32_HOME "$ENV{USERPROFILE}")
+            set(_TC32_SUBDIR "tc32_130_Windows")
+        elseif(APPLE)
+            set(_TC32_HOME "$ENV{HOME}")
+            set(_TC32_SUBDIR "tc32_130_MacOS")
+        else()
+            set(_TC32_HOME "$ENV{HOME}")
+            set(_TC32_SUBDIR "tc32_130_Linux")
+        endif()
+        set(TC32_TOOLCHAIN_PATH "${_TC32_HOME}/.Telink_Tools/${_TC32_SUBDIR}/tc32/bin")
     endif()
 endif()
 
 # Normalise path separators (handles both / and \)
 file(TO_CMAKE_PATH "${TC32_TOOLCHAIN_PATH}" TC32_TOOLCHAIN_PATH)
 
-cmake_path(CONVERT "${TC32_TOOLCHAIN_PATH}" TO_NATIVE_PATH_LIST _TC32_NATIVE_PATH)
-if(NOT "$ENV{PATH}" MATCHES "${_TC32_NATIVE_PATH}")
-    set(ENV{PATH} "${_TC32_NATIVE_PATH};$ENV{PATH}")
+# Inject into PATH using the platform-correct separator (: on Unix, ; on Windows)
+if(WIN32)
+    set(_TC32_PATH_SEP ";")
+else()
+    set(_TC32_PATH_SEP ":")
+endif()
+if(NOT "$ENV{PATH}" MATCHES "${TC32_TOOLCHAIN_PATH}")
+    set(ENV{PATH} "${TC32_TOOLCHAIN_PATH}${_TC32_PATH_SEP}$ENV{PATH}")
 endif()
 
 set(_TC32 "${TC32_TOOLCHAIN_PATH}/tc32-elf-")
 
+# ─── Executable suffix (.exe on Windows, empty on Linux/macOS) ────────────────
+if(WIN32)
+    set(_TC32_EXE ".exe")
+else()
+    set(_TC32_EXE "")
+endif()
+
 # ─── Compiler / tool executables ──────────────────────────────────────────────
-set(CMAKE_C_COMPILER   "${_TC32}gcc.exe" CACHE FILEPATH "TC32 C compiler")
-set(CMAKE_ASM_COMPILER "${_TC32}gcc.exe" CACHE FILEPATH "TC32 assembler (via GCC driver)")
-set(CMAKE_LINKER       "${_TC32}ld.exe"  CACHE FILEPATH "TC32 linker")
-set(CMAKE_AR           "${_TC32}ar.exe"  CACHE FILEPATH "TC32 archiver")
+set(CMAKE_C_COMPILER   "${_TC32}gcc${_TC32_EXE}" CACHE FILEPATH "TC32 C compiler")
+set(CMAKE_ASM_COMPILER "${_TC32}gcc${_TC32_EXE}" CACHE FILEPATH "TC32 assembler (via GCC driver)")
+set(CMAKE_LINKER       "${_TC32}ld${_TC32_EXE}"  CACHE FILEPATH "TC32 linker")
+set(CMAKE_AR           "${_TC32}ar${_TC32_EXE}"  CACHE FILEPATH "TC32 archiver")
 
 # Force the compiler ID so CMake doesn't spend time probing an unknown target
 set(CMAKE_C_COMPILER_ID      "GNU"   CACHE STRING "Forced compiler ID"      FORCE)
@@ -59,10 +82,10 @@ set(CMAKE_C_STANDARD_COMPUTED_DEFAULT   "90" CACHE STRING "" FORCE)
 set(CMAKE_C_EXTENSIONS_COMPUTED_DEFAULT  "ON" CACHE STRING "" FORCE)
 
 # Export for use in CMakeLists.txt custom commands
-set(TC32_OBJCOPY "${_TC32}objcopy.exe" CACHE FILEPATH "TC32 objcopy")
-set(TC32_OBJDUMP "${_TC32}objdump.exe" CACHE FILEPATH "TC32 objdump")
-set(TC32_NM      "${_TC32}nm.exe"      CACHE FILEPATH "TC32 nm")
-set(TC32_LD      "${_TC32}ld.exe"      CACHE FILEPATH "TC32 ld (for custom link step)")
+set(TC32_OBJCOPY "${_TC32}objcopy${_TC32_EXE}" CACHE FILEPATH "TC32 objcopy")
+set(TC32_OBJDUMP "${_TC32}objdump${_TC32_EXE}" CACHE FILEPATH "TC32 objdump")
+set(TC32_NM      "${_TC32}nm${_TC32_EXE}"      CACHE FILEPATH "TC32 nm")
+set(TC32_LD      "${_TC32}ld${_TC32_EXE}"      CACHE FILEPATH "TC32 ld (for custom link step)")
 
 # ─── Search paths ─────────────────────────────────────────────────────────────
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
